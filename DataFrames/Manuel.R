@@ -7,3 +7,19 @@ job_title <- c("Professional", "Programmer", "Management", "Clerical", "Develope
 employee <- data.frame(id, name, job_title)
 
 view(employee)
+
+
+separate(employee, name, into = c("first_name", "last_name"), sep=" ")
+
+first_name <- c("John", "Rob", "Rachel", "Christy", "Johnson", "Candace", "Carlson", "Pansy", "Darius", "Claudia")
+last_name <- c("Mendes", "Stewart", "Abrahamson", "Hickman", "Harper", "Miller", "Landy", "Jordan", "Berry", "Garcia")
+job_title <- c("Professional", "Programmer", "Management", "Clerical", "Developer", "Programmer", "Management", "Clerical", "Developer", "Programmer")  
+
+employee_v2 <-data.frame(id,first_name, last_name, job_title)
+print(employee_v2)
+
+unite(employee_v2, "full_name", first_name, last_name, sep = " ")
+
+view(penguins)
+
+penguins %>% mutate(bodyth_mass_kg = body_mass_g/1000, flipper_length_mm/1000)
