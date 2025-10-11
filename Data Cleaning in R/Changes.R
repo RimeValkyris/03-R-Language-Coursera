@@ -19,3 +19,6 @@ mean(hotel_bookings$lead_time)
 
 hotel_bookings_city <- hotel_bookings %>%
   filter(hotel=="City Hotel")
+
+mean(hotel_bookings_city$lead_time)
+
